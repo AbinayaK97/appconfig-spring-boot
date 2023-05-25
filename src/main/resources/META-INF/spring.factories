@@ -1,0 +1,11 @@
+# ConfigData Loaders
+org.springframework.boot.context.config.ConfigDataLoader=\
+org.springframework.boot.context.config.AWSAppConfigDataLoader
+
+# ConfigData Location Resolvers
+org.springframework.boot.context.config.ConfigDataLocationResolver=\
+org.springframework.boot.context.config.AWSAppConfigDataLocationResolver
+
+# Environment Post Processors
+org.springframework.boot.env.EnvironmentPostProcessor=\
+org.springframework.boot.context.config.AWSAppConfigDataEnvironmentPostProcessor
