@@ -25,12 +25,13 @@ public class AWSAppConfigDataLocationResolver implements ConfigDataLocationResol
         return Ordered.LOWEST_PRECEDENCE;
     }
 
+
     @Override
     public List<AWSAppConfigResource> resolveProfileSpecific(ConfigDataLocationResolverContext context, ConfigDataLocation location, Profiles profiles) {
         StartConfigurationSessionRequest configurationRequest = new StartConfigurationSessionRequest();
-        configurationRequest.withApplicationIdentifier(System.getenv("AWS_APP_CONFIG_APPLICATION"));
-        configurationRequest.withConfigurationProfileIdentifier("application-" + profiles.getActive().get(0));
-        configurationRequest.withEnvironmentIdentifier(profiles.getActive().get(0));
+        configurationRequest.withApplicationIdentifier("Sample Application");
+        configurationRequest.withConfigurationProfileIdentifier("Sample profile");
+        configurationRequest.withEnvironmentIdentifier("Sample Environment");
         AWSAppConfigResource awsAppConfigResource = new AWSAppConfigResource(configurationRequest);
         return Collections.singletonList(awsAppConfigResource);
     }
